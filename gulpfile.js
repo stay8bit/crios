@@ -30,7 +30,7 @@ gulp.task('html', function () {
 
 // css
 gulp.task('css', function () {
-	return gulp.src('./src/sass/*.sass')
+	return gulp.src('./src/sass/!*.sass')
 		.pipe(sass())
 		.on('error', notify.onError())
 		.pipe(concatCss("styles.min.css"))

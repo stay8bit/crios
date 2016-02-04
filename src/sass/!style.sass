@@ -1,8 +1,278 @@
-@import 'variables'
-body
-	background: $primary;
+@import '_variables'
+
+
+// headers
+
+.headers
+	font-family: $mosseratt
+	margin: 0
+	padding: 0
 
 h1
-	color: $accent;
-	font-size: 44px
-	font-family: Arial
+	@extend .headers
+	color: #000
+	font-size: 42px	
+	line-height: 42px
+	margin-bottom: 10px
+h2
+	@extend .headers
+	color: #000
+	font-size: 36px	
+	line-height: 36px
+h3
+	@extend .headers
+	color: #000
+	font-size: 28px	
+	line-height: 28px
+h4
+	@extend .headers
+	color: #000
+	font-size: 21px	
+	line-height: 21px
+	margin: 20px 0
+
+p
+	margin: 0
+	padding: 0
+	color: $text-color
+
+
+// buttons
+
+.button
+	display: inline-block
+	border: none
+	padding: 0 30px
+	height: 50px
+	border-radius: 25px
+	background: #fff
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), inset 0 1px 1px #ddd
+	span
+		color: $primary
+		font-size: 14px
+		line-height: 50px
+		font-weight: bold
+		text-transform: uppercase
+	&:hover
+		text-decoration: none
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.4), 0 1px 1px #ddd
+		span
+			color: darken($primary, 5%)
+			line-height: 52px
+	&:active
+		text-decoration: none
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.7), 0 1px 1px #eee
+		background: $primary
+		span
+			color: #fff
+	&:focus
+		text-decoration: none
+		
+.center
+	text-align: center
+	
+// body
+
+body
+	min-width: 320px
+	overflow-x: hidden
+	font-family: $mosseratt
+	font-size: 16px
+	line-height: 16px
+
+
+// header
+
+.header
+	padding: 0
+	position: relative
+	&-nav, &-title
+		background: #eee url(../images/bg.jpg) repeat-y
+	&-nav
+		padding-top: 25px
+		height: 225px
+	.nav
+		text-align: left
+	.logo
+		text-align: center
+	.search
+		text-align: right
+		position: relative
+		input
+			background: transparent
+			border: none
+			border-bottom: 1px solid #ccc
+			transition: all .2s ease
+			&:focus
+				padding: 10px
+				background: #fff
+				border-bottom-color: $primary
+				outline: none
+		input:focus ~ .fa
+			background: #fff
+		.fa
+			cursor: pointer
+			padding: 5px 0 5px 5px
+			position: relative
+			right: 30px
+			transition: all .2s ease
+			&:focus, &:active
+				color: $primary
+	&-title
+		text-align: center
+		.btn-wrapper
+			margin: 25px 0
+	&-baner
+		height: 700px
+		background: #eee url(../images/baner.jpg) center top no-repeat
+		background-size: cover
+		
+	
+// toggle-menu
+
+.toggle-menu
+	display: block
+	position: absolute
+	left: 25px
+	top: 0
+	width: 30px
+	height: 30px
+	z-index: 2
+	span:after,
+	span:before
+		content: ""
+		position: absolute
+		left: 0
+		top: 9px
+	span:after 
+		top: 18px
+	span 
+		position: relative
+		display: block
+	span,
+	span:after,
+	span:before
+		width: 100%
+		height: 6px
+		background-color: $primary
+		transition: all 0.3s
+		backface-visibility: hidden
+		border-radius: 0
+	&.on span
+		background-color: transparent;
+	&.on span:before
+		transform: rotate(45deg) translate(-1px, 0px)
+	&.on span:after
+		transform: rotate(-45deg) translate(6px, -7px)
+
+
+// section-1
+
+.section-1
+	padding: 100px 0
+	p
+		margin-bottom: 10px
+	.item
+		padding: 100px 10px
+
+
+// section-2
+
+.section-2
+	.col-md-6
+		padding: 0
+	.item
+		height: 400px
+		display: flex
+		background: #f7f8fb
+		img
+			max-width: 100%	
+		.text-wrapper
+			margin: auto
+			padding: 0 100px
+			h3
+				margin-bottom: 15px
+			
+		
+// section-3
+
+.section-3
+	.item
+		height: 400px
+		display: flex
+		img
+			max-width: 100%	
+			opacity: .1
+		.text-wrapper
+			margin: auto
+			padding: 0 100px
+			h3
+				margin-bottom: 15px
+				color: $accent
+			p
+				line-height: 2
+
+		
+// section-4
+
+.section-4
+	background: #fff 
+	padding: 100px 0
+	p
+		margin-bottom: 10px
+	.btn-wrapper
+			margin: 25px 0 0 0
+
+
+// footer
+
+.footer
+	height: 700px
+	background: url(../images/footer-baner.jpg) center center no-repeat
+		background-size: cover
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import '_media'
